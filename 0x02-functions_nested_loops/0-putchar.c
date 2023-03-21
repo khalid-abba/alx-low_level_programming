@@ -4,12 +4,12 @@
  * main - Prints _putchar
  * @void: Empty parameter list for main.
  *
- * Descreption: Prints _putchar w/out stdio
+ * Description: Prints _putchar w/out stdio
  *
  * Return: 0 for success
 */
 int main(void)
-{	
+{
 	_putchar('_');
 	_putchar('p');
 	_putchar('u');
