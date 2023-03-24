@@ -1,61 +1,26 @@
-#include <stdio.h>
+/*
+ * File: 101-print_number.c
+ * Auth: khalid-abba
+ */
+
 #include "main.h"
 
-
-int exponent(int x, int y)
-{
-	int power;
-
-	power = x;
-
-	if (x == 0)
-		return (0);
-	if (y == 0)
-		return (1);
-
-	while (y >= 2)
-	{
-		power  = power * x;
-		y--;
-	}
-	return (power);
-}
-
 /**
- * print_number - print an int using only _putchar
- * Return: nothing
- **/
-
-void print_number(int number)
+ * print_number - Prints an integer.
+ * @n: The integer to be printed.
+ */
+void print_number(int n)
 {
-	int size, digit;
-	long counter, sign;
+	unsigned int num = n;
 
-	sign = 1;
-	digit = 0;
-	size = 1;
-	counter = number;
-
-	if (number < 0)
+	if (n < 0)
 	{
 		_putchar('-');
-		sign = -1;
-		counter *= sign;
+		num = -num;
 	}
 
-	for (; counter >= 10; size++)
-	{
-		counter = counter / 10;
-	}
+	if ((num / 10) > 0)
+		print_number(num / 10);
 
-	counter = sign * (long)number;
-
-	while (size >= 2)
-	{
-		digit = (counter / exponent(10, size - 1));
-		_putchar(digit + '0');
-		counter = counter % exponent(10, size - 1);
-		size--;
-	}
-	_putchar(counter % 10 + '0');
+	_putchar((num % 10) + '0');
 }
