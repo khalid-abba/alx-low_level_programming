@@ -1,14 +1,6 @@
 #include <stdio.h>
 #include "main.h"
 
-/**
- * exponent - x to the power of y
- * @x: base number
- * @y: exponent
- * Description: calcuates x^y
- * Return: x^y
- *
- **/
 
 int exponent(int x, int y)
 {
@@ -31,8 +23,6 @@ int exponent(int x, int y)
 
 /**
  * print_number - print an int using only _putchar
- * @number: int to be printed by function
- *
  * Return: nothing
  **/
 
