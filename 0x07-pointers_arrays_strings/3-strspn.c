@@ -1,23 +1,31 @@
 #include "main.h"
 
 /**
-*_strchr - print match
-*@s: array
-*@c: char
-*
-*Return: char return
+* _strspn - get the length of sub-text
+* of a prefix substring.
+* @s: char array
+* @accept: char array
+* Return: break position
 */
-char *_strchr(char *s, char c)
+unsigned int _strspn(char *s, char *accept)
 {
-	int i = 0;
+	int letter;
+	int pos = 0;
 
-	while (s[i] != 0)
+	while (s[pos])
 	{
-		if (s[i] == c)
-			return (&s[i]);
-		i++;
+		for (letter = 0; accept[letter]; letter++)
+		{
+			if (accept[letter] == s[pos])
+			{
+				break;
+			}
+		}
+		if (!accept[letter])
+		{
+			break;
+		}
+		pos++;
 	}
-	if (s[i] == c)
-		return (&s[i]);
-	return ('\0');
+	return (pos);
 }
