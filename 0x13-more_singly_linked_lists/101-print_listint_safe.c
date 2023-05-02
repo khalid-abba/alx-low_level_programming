@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /**
- * print_listint_safe - prints listint_t list with or without loops
+ * print_listint_safe - prints listint_t 
  * @head: pointer to start of linked list
  * Return: number of nodes
  */
