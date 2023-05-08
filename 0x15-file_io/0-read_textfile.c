@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+#include "holberton.h"
 
 /**
  * read_textfile - that reads a text file and prints
@@ -13,7 +13,7 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t kha, khal, khali;
+	ssize_t file, let, w;
 	char *text;
 
 	text = malloc(letters);
@@ -23,19 +23,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
-	kha = open(filename, O_RDONLY);
+	file = open(filename, O_RDONLY);
 
-	if (kha == -1)
+	if (file == -1)
 	{
-		free(text);
+i		free(text);
 		return (0);
 	}
 
-	khal = read(file, text, letters);
+	let = read(file, text, letters);
 
-	w = write(STDOUT_FILENO, text, khal);
+	w = write(STDOUT_FILENO, text, let);
 
-	close(kha);
+	close(file);
 
-	return (khali);
+	return (w);
 }
